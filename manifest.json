@@ -8,7 +8,7 @@
     "128": "icons/icon128.png"
   },
   "background":{
-      "scripts":["background.js"],
+      "scripts":["background.js","jquery-1.8.3.min.js"],
       "persistent": false
   },
   "browser_action": {
@@ -22,11 +22,17 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["selection.js"],
+      "js": ["selection.js","jquery-1.8.3.min.js","jquery.min.csv.js","wylie_convert.js"],
       "run_at": "document_start",
       "all_frames": true
     }
   ],
+  "web_accessible_resources": [
+    "tib_eng.csv",
+    "data/DICT_EN.csv",
+    "data/DICT.csv"
+
+],
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
