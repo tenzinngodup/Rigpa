@@ -1,9 +1,9 @@
 {
 	"manifest_version": 2,
 	"name": "Rigpa",
-  "short_name": "Rigpa",
+  "short_name": "Tibetan Web Reader",
 	"version": "1.0.2",
-  "description": "Annotation tool for Tibetan.",
+  "description": "App for seamless reading experience in Tibetan.",
   "icons": {
     "128": "icons/icon128.png"
   },
@@ -28,10 +28,10 @@
     }
   ],
   "web_accessible_resources": [
-    "tib_eng.csv",
+    "data/tib_eng.csv",
     "data/DICT_EN.csv",
-    "data/DICT.csv"
-
+    "data/DICT.csv",
+    "data/tib_eng_rangjung_curated.csv"
 ],
   "commands": {
     "_execute_browser_action": {

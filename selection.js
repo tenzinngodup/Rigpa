@@ -49,16 +49,18 @@ function highlightSelectedBlock () {
   closestBlockElement.style.outline = '1px solid blue'
 
   let selected_Text = window.getSelection().toString();
-   var url = chrome.runtime.getURL("tib_eng.csv");
+   var url = chrome.runtime.getURL("data/tib_eng_rangjung_curated.csv");
    var url_tib = chrome.runtime.getURL("data/DICT.csv");
 
 
-  $.get(url_tib, function(data) {
-    let lookup_table = $.csv.toObjects(data);
+  $.get(url, function(data) {
+    let options = { separator: '|'} 
+    let lookup_table = $.csv.toObjects(data,options);
+    console.log(lookup_table);
     let array_result = "none";
     let result = lookup_table.forEach(element => {
       if(element.term == selected_Text) {
-        array_result = element.definition
+        array_result = element.english
         return element;
       }
       console.log(SYLLABLELIST[element.term]);
