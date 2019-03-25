@@ -78,7 +78,7 @@ function filterText(element){
   // if the element has (།)་then add (་)
   var length = element.length;
   if(element.charCodeAt(length - 1) == 3853){
-    element = element.substr(0, length-2) + String.fromCharCode(3851);
+    element = element.substr(0, length-1) + String.fromCharCode(3851);
     return element;
   }
   if(element.charCodeAt(length - 1) != 3851){
